@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário</title>
+</head>
+<body>
+    <h1>Formulário</h1>
+    <form action="cadastro <?php" method="get" autocomplete="on">
+       <fieldset>
+              <legend>Dados pessoais</legend>
+              <p>
+                <label for="inome">Nome completo:</label>
+                <input type="text" name="nome" id="inome" minlength="5" maxlength="20" required>
+              </p>
+             <label for="imail">E-mail:</label>
+             <input type="email" name="email" id="iemail" autocomplete="email">
+           
+           <p>
+              <label for="itel">telefone((xx)xxxxx-xxxx):</label><br>
+              <input type="tel" name="tel" id="itel" autocapitalize="tel" pattern="^\(\d({2}\)\d{4,5}-\d{4}$" required placeholder="(xx)xxxxx-xxxx">
+           </p>
+            <p>
+                <action="/login" method="post">
+                <Label for="username">Usuário:</Label>
+                <input type="text" id="username" name="username"><br><br>
+
+                <label for="password">Senha:</label>
+                <input type="password" id="password" name="password"><br><br>
+           </p>
+           <p>
+            <label for="idade">idade:</label><br>
+            <input type="number" id="idade" name="idade" min="0" max="120">
+          </p>
+       
+        
+           <p>
+              <action="cadastro.php" method="get" autocomplete="on">
+             <label for="estado">Estado para entrega</label><br>
+             <select name="estado" id="estado"           name="estado"required> <option value="">Excoha seu estado-</option>
+               <optgroup label="Região sudeste"><option value="MG">Minas Gerais</option>
+                        <option value="RJ">Rio de Janeiro</option>
+                        <option value="SP">São Paulo</option>
+                        <option value="ES">Espirito Santo</option>
+                   </optgroup>
+             
+               <optgroup label="Região Nordeste">
+                <option value="MA">Maranhã</option>
+                <option value="PE">Pernambuco</option>
+                <option value="RN">Rio Grande do Norte</option>
+               </optgroup>
+           </select>       
+               <p>
+                <action"/enviar_cnh" method="post"
+                   enctype="multipart/form-data">
+                  <label for="cnh">Enviar uma foto da CNH:</label><br>
+                  <input type="file" id="cnh" accept="="image/** required><br><br>
+               </p>
+     </fieldset> 
+                
+               <p> 
+             <fieldset>
+                 <h1>Escolha o modelo do carro</h1>
+
+                 <action="#" method="post">
+                  <label for="carro">Modelo BYD:</label><br>
+                  <input type="radio" id="gasolina" name="combustivel" value="gasolina">
+<label for="BYD Seal">BYD Seal</label><br>
+<input type="radio" id="BYD Han" name="BYD Han" value="BYD Han">
+<label for="BYD Han">BYD Han</label><br>
+<input type="radio" id="BYD Song Plus" name="BYD Song Plus" value="BYD Song Plus">
+<label for="BYD Song Plus">BYD Song Plus</label><br>
+                      
+                  </select>
+               </p>
+                 <br><br>
+                 <fieldset>
+                  <legend>Itens adicionais:</legend>
+
+                  <input type="checkbox" id="som" name="itens{}" value="ar_digital">
+                  <label for="ar">Ar-condicionado ar_digital</label><br>
+                  <input type="checkbox" id="camera" name="itens{}" value="camera_360">
+                  <label for="camera">Câmera 360</label><br>
+                   <p>
+        <!-- input type color
+            É um seletor de cores.
+            value - É utilizado para especificar uma cor padrão
+        -->
+            <label for="icor">Cor do carro:</label>
+            <input type="color" name="cor" id="icor" value="#00ff00">
+    </p>
+    <p>
+        <!-- input Range
+        É utilizado como muma barra de porcentágem
+        min - Valor mínimo
+        max - Valor máximo
+        value - Valor a ser iniciado
+        -->
+            <label for="inivel">Intensidade da cor (brilho) :</label><br>
+            <input type="range" id="inivel" min="1" max="100" value="2">
+    </p>
+            </fieldset>
+         
+           </p>
+
+          <p>
+            <input type="submit" value="Enviar">
+            <input type="reset=" value="limpar">
+         </p>
+
+       <p>
+        <label for="imsg">Mensagem:</label><br>
+        <textarea name="" id="imsg" cols="30" rows="10" placeholder="Sua Mensagemao usuário.">
+        </textarea>
+       </p>
+
+    </form>
+</body>
+</html>
